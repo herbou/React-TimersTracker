@@ -10,7 +10,6 @@ export default function timersReducer(state_timers = [], action) {
     
     case FETCH_TIMERS: {
       const timers = action.timers
-      
       return timers
     }
     
@@ -26,24 +25,17 @@ export default function timersReducer(state_timers = [], action) {
     case UPDATE_TIMER:
     case START_TIMER:
     case STOP_TIMER:
-    case RESET_TIMER:
-      return timerUpdateReducer(state_timers, action.timer)
-  
-
+    case RESET_TIMER: {
+      const timers = state_timers.map(t => {
+        if (t.id === action.timer.id)
+          return action.timer
+        else
+          return t
+      })
+      return timers
+    }
 
     default: return state_timers
   
   }
-}
-
-
-function timerUpdateReducer(state_timers = [], timer) {
-  const timers = state_timers.map(t => {
-    if (t.id === timer.id)
-      return timer
-    else
-      return t
-  })
-  
-  return timers
 }
