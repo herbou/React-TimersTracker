@@ -1,0 +1,10 @@
+export const CHANGE_THEME = "change-theme-action"
+export const GET_THEME    = "get-theme-action"
+
+export const FETCH_TIMERS = "fetch-timers-action"
+export const CREATE_TIMER = "create-timer-action"
+export const DELETE_TIMER = "delete-timer-action"
+export const UPDATE_TIMER = "update-timer-action"
+export const START_TIMER  = "start-timer-action"
+export const STOP_TIMER   = "stop-timer-action"
+export const RESET_TIMER  = "reset-timer-action"
